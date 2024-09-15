@@ -1,5 +1,6 @@
 import 'package:counter_app/counter_controller.dart';
 import 'package:counter_app/screen2.dart';
+import 'package:counter_app/user/screen/list_user_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: ListUserScreen(),
     );
   }
 }
@@ -67,6 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             FloatingActionButton(
+              heroTag: '123456',
               onPressed: () {
                 controller.decrement();
               },
@@ -74,6 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: const Icon(Icons.remove),
             ),
             FloatingActionButton(
+              heroTag: '98765432',
               onPressed: () {
                 controller.increment();
               },

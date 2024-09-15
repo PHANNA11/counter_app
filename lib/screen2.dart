@@ -14,7 +14,6 @@ class Screen2 extends StatelessWidget {
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           title: Text('Screen2'),
-         
         ),
         body: Center(
           child: Column(
@@ -34,6 +33,7 @@ class Screen2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             FloatingActionButton(
+              heroTag: '876345',
               onPressed: () {
                 controller.decrement();
               },
@@ -41,6 +41,7 @@ class Screen2 extends StatelessWidget {
               child: const Icon(Icons.remove),
             ),
             FloatingActionButton(
+              heroTag: '1',
               onPressed: () {
                 controller.increment();
               },
