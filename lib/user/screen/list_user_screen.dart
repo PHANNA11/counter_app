@@ -38,8 +38,16 @@ class ListUserScreen extends StatelessWidget {
                   title: Text(controller.listUsers[index].name.toString()),
                   subtitle:
                       Text('Age ${controller.listUsers[index].age.toString()}'),
-                  trailing:
-                      Text(controller.listUsers[index].position.toString()),
+                  trailing: Column(
+                    children: [
+                      Text(controller.listUsers[index].position.toString(),
+                          style: TextStyle(fontSize: 16)),
+                      Text(
+                        '\$ ${controller.listUsers[index].salary}',
+                        style: TextStyle(color: Colors.red, fontSize: 16),
+                      ),
+                    ],
+                  ),
                 ),
             separatorBuilder: (context, index) => const Divider(),
             itemCount: controller.listUsers.length),
@@ -50,8 +58,9 @@ class ListUserScreen extends StatelessWidget {
                 user: UserModel(
                     id: DateTime.now().millisecondsSinceEpoch,
                     name: faker.person.name(),
+                    salary: 200.0,
                     age: random.decimal(min: 1, scale: 100).toInt(),
-                    position: 'Dev'));
+                    position: faker.job.title()));
           },
           child: Icon(Icons.person_add_alt_1),
         ),
